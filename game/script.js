@@ -1,6 +1,9 @@
+let bulletArray = []; //store array of bullets ......
+
 class staticSprite {
     constructor(x, y, width, height, imageLink, targetCanvas) {
         this.displaySprite = this.displaySprite.bind(this);
+        this.removeSprite = this.removeSprite.bind(this);
         let newImage = new Image();
         newImage.onload = () => {
             this.image = newImage;
@@ -14,6 +17,9 @@ class staticSprite {
         this.targetCanvas = document
             .getElementById(targetCanvas)
             .getContext('2d');
+    }
+    removeSprite() {
+        this.targetCanvas.clearRect(this.x, this.y, this.width, this.height);
     }
 
     displaySprite() {
@@ -42,7 +48,7 @@ class moveableStaticSprite extends staticSprite {
         this.y = newY;
         //render
         super.displaySprite();
-    };
+    }
 }
 
 class controllableStaticSprite extends staticSprite {
@@ -61,7 +67,11 @@ class controllableStaticSprite extends staticSprite {
         this.moveSprite = this.moveSprite.bind(this);
         this.leftKey = leftKey;
         this.rightKey = rightKey;
-        document.addEventListener('keydown', () => this.moveKeySprite(event), false);
+        document.addEventListener(
+            'keydown',
+            () => this.moveKeySprite(event),
+            false
+        );
     }
 
     //had to duplicate this for moment
@@ -73,33 +83,37 @@ class controllableStaticSprite extends staticSprite {
         this.y = newY;
         //render
         super.displaySprite();
-    };
-
+    }
 
     moveKeySprite(event) {
-        console.log(event)
-        if (event.key === this.leftKey ) {
+        console.log(event);
+        if (event.key === this.leftKey) {
             //stop sprite going over the edge
-            if (this.x >= 10){
+            if (this.x >= 10) {
                 this.moveSprite(this.x - 10, this.y);
             }
-
         } else if (event.key === this.rightKey) {
-            if (this.x <= 700 - this.width - 10){ //take into account the width of ship when going left
+            if (this.x <= 700 - this.width - 10) {
+                //take into account the width of ship when going left
                 this.moveSprite(this.x + 10, this.y);
             }
+        } else if (event.code === 'Space') {
+            console.log('New bullet');
+            if (bulletArray.length < 1) {
+                bulletArray.push(
+                    new moveableStaticSprite(
+                        this.x + this.width / 2 - 10,
+                        this.y,
+                        20,
+                        20,
+                        '../images/cat.png',
+                        'myCanvas'
+                    )
+                );
+            }
         }
-    };
+    }
 }
-
-let topLeftCat1 = new moveableStaticSprite(
-    0,
-    100,
-    60,
-    60,
-    'cat.png',
-    'myCanvas'
-);
 
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
@@ -138,4 +152,18 @@ let spaceShip = new controllableStaticSprite(
     'a',
     's'
 );*/
-
+setInterval(() => {
+    console.log('checking bullets');
+    bulletArray.forEach((bullet, index) => {
+        //update the bullets
+        bullet.moveSprite(bullet.x, bullet.y - 10);
+        console.log(bullet.y);
+        if (bullet.y <= 110) {
+            //remove bullet
+            console.log(bullet.y);
+            bullet.removeSprite();
+            bulletArray.splice(index, 1);
+        
+        }
+    });
+}, 100);
