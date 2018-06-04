@@ -1,16 +1,6 @@
 setInterval(() => {
     console.log('checking bullets');
     bulletArray.forEach((bullet, index) => {
-        // check if where it moving is occupied
-        
-
-        
-        //for every sprite is it on the same x axis
-        //see it y is withing the bottom and top of bullet
-        //
-       // enemyArray.forEach((enemy) =>{
-       //     if 
-       // });
 
 
 
@@ -25,16 +15,17 @@ setInterval(() => {
             bulletArray.splice(index, 1);
             
         }
-        enemyArray.forEach(enemy => {
-            if (bullet.x <= enemy.x && bullet.y <= enemy.y) {
+        enemyArray.forEach((enemy,enemyIndex) => {
+            if (bullet.x <= enemy.x + enemy.width - 8  && bullet.y <= enemy.y + enemy.height - 8 ) {
+                if (bullet.y)
                 console.log("a hit")
                 bullet.removeSprite();
                 bulletArray.splice(index, 1);
                 enemy.removeSprite();
-                enemyArray.splice(index, 1);
+                enemyArray.splice(enemyIndex, 1);
             }
 
         })
         
     });
-}, 100);
+}, 50);
