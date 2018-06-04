@@ -50,53 +50,27 @@ class controllableStaticSprite extends staticSprite {
     }
 }
 
-let topLeftCat1 = new moveableStaticSprite(0, 0, 60, 60, "cat.png", "myCanvas")
-let topLeftCat2 = new moveableStaticSprite(20, 0, 60, 60, "cat.png", "myCanvas")
-let topLeftCat3 = new moveableStaticSprite(40, 0, 60, 60, "cat.png", "myCanvas")
-let topLeftCat4 = new moveableStaticSprite(60, 0, 60, 60, "cat.png", "myCanvas")
-let topLeftCat5 = new moveableStaticSprite(80, 0, 60, 60, "cat.png", "myCanvas")
-let topLeftCat6 = new moveableStaticSprite(100, 0, 60, 60, "cat.png", "myCanvas")
-let topLeftCat7 = new moveableStaticSprite(120, 0, 60, 60, "cat.png", "myCanvas")
-let topLeftCat8 = new moveableStaticSprite(140, 0, 60, 60, "cat.png", "myCanvas")
-let topLeftCat9 = new moveableStaticSprite(180, 0, 60, 60, "cat.png", "myCanvas")
-let topLeftCat10 = new moveableStaticSprite(200, 0, 60, 60, "cat.png", "myCanvas")
+let topLeftCat1 = new moveableStaticSprite(0, 100, 60, 60, "cat.png", "myCanvas")
 let topRightCat = new controllableStaticSprite(0, 650, 60, 60, "download.jpg", "myCanvas")
 
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("SCORE : THE SCORE GOES HERE",10,50);
+ctx.beginPath();
+ctx.moveTo(0,100 );
+ctx.lineTo(700,100);
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(0,600 );
+ctx.lineTo(700,600);
+ctx.stroke();
+//gameplay within 50px to 650px;
 
-for (let i = 2 ; i < 300; i++){
-   setTimeout( () => {topLeftCat1.moveSprite(i+10 * 2, i * 2)} , i*10)
-}
-for (let i = 2 ; i < 300; i++){
-    setTimeout( () => {topLeftCat2.moveSprite(i+20 * 2, i * 2)} , i*10)
- }
+//for (let i = 2 ; i < 300; i++){
+//   setTimeout( () => {topLeftCat1.moveSprite(i+10 * 2, i * 2)} , i*10)
+//}
 
- for (let i = 2 ; i < 300; i++){
-    setTimeout( () => {topLeftCat3.moveSprite(i+30 * 2, i * 2)} , i*10)
- }
-
- for (let i = 2 ; i < 300; i++){
-    setTimeout( () => {topLeftCat4.moveSprite(i+ 40 * 2, i * 2)} , i*10)
- }
-
- for (let i = 2 ; i < 300; i++){
-    setTimeout( () => {topLeftCat5.moveSprite(i + 50 * 2, i * 2)} , i*10)
- }
-
- for (let i = 2 ; i < 300; i++){
-    setTimeout( () => {topLeftCat6.moveSprite(i + 60 * 2, i * 2)} , i*10)
- }
-
- for (let i = 2 ; i < 300; i++){
-    setTimeout( () => {topLeftCat7.moveSprite(i + 70 * 2, i * 2)} , i*10)
- }
-
- for (let i = 2 ; i < 300; i++){
-    setTimeout( () => {topLeftCat8.moveSprite(i + 80 * 2, i * 2)} , i*10)
- }
-
- for (let i = 2 ; i < 300; i++){
-    setTimeout( () => {topLeftCat9.moveSprite(i + 90* 2, i * 2)} , i*10)
- }
 
  
 
