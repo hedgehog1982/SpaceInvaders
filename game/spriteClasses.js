@@ -97,7 +97,7 @@ class controllableStaticSprite extends staticSprite {
             }
         } else if (event.code === 'Space') {
             console.log('New bullet');
-            if (bulletArray.length < 1) {
+            if (bulletArray.length < 10) {
                 bulletArray.push(
                     new moveableStaticSprite(
                         this.x + this.width / 2 - 10,
