@@ -12,10 +12,16 @@ let spaceShip = new controllableStaticSprite(
     'ArrowRight'
 );
 
+<<<<<<< HEAD
 
 enemyArray.push(  new moveableStaticSprite(
     130,
     200,
+=======
+enemyArray.push(new moveableStaticSprite(
+    130,  //x
+    200,  //y
+>>>>>>> 25cbd944b83b70096b4fcd012c5e15aba9634214
     40,
     40,
     '../images/invader.png',
