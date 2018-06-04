@@ -61,9 +61,10 @@ class controllableStaticSprite extends staticSprite {
         this.moveSprite = this.moveSprite.bind(this);
         this.leftKey = leftKey;
         this.rightKey = rightKey;
-        document.addEventListener('keydown', () => this.moveKeySprite(event));
+        document.addEventListener('keydown', () => this.moveKeySprite(event), false);
     }
 
+    //had to duplicate this for moment
     moveSprite(newX, newY) {
         //clear previous space
         this.targetCanvas.clearRect(this.x, this.y, this.width, this.height);
@@ -77,14 +78,16 @@ class controllableStaticSprite extends staticSprite {
 
     moveKeySprite(event) {
         console.log(event)
-        if (event.key === this.leftKey) {
-            console.log('pressed left');
-            console.log()
-            this.moveSprite(this.x - 10, this.y);
+        if (event.key === this.leftKey ) {
+            //stop sprite going over the edge
+            if (this.x >= 10){
+                this.moveSprite(this.x - 10, this.y);
+            }
 
         } else if (event.key === this.rightKey) {
-            console.log('pressed right');
-            this.moveSprite(this.x + 10, this.y);
+            if (this.x <= 700 - this.width - 10){ //take into account the width of ship when going left
+                this.moveSprite(this.x + 10, this.y);
+            }
         }
     };
 }
@@ -115,7 +118,7 @@ ctx.stroke();
 //gameplay within 50px to 650px;
 
 let spaceShip = new controllableStaticSprite(
-    20,
+    330,
     601,
     40,
     40,
@@ -125,7 +128,7 @@ let spaceShip = new controllableStaticSprite(
     'ArrowRight'
 );
 
-let spaceShip2 = new controllableStaticSprite(
+/*let spaceShip2 = new controllableStaticSprite(
     60,
     601,
     40,
@@ -134,5 +137,5 @@ let spaceShip2 = new controllableStaticSprite(
     'myCanvas',
     'a',
     's'
-);
+);*/
 
