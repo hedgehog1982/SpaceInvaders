@@ -65,10 +65,15 @@ class controllableStaticSprite extends staticSprite {
         this.moveSprite = this.moveSprite.bind(this);
         this.leftKey = leftKey;
         this.rightKey = rightKey;
+        this.currentDirection = "none"
         document.addEventListener(
             'keydown',
             () => this.moveKeySprite(event),
             false
+        );
+        document.addEventListener(
+            'keyup',
+            () => {this.currentDirection = "none"}
         );
     }
 
@@ -86,15 +91,17 @@ class controllableStaticSprite extends staticSprite {
     moveKeySprite(event) {
         console.log(event);
         if (event.key === this.leftKey) {
+            this.currentDirection = "left"
             //stop sprite going over the edge
-            if (this.x >= 10) {
-                this.moveSprite(this.x - 10, this.y);
-            }
+            //if (this.x >= 10) {
+            //    this.moveSprite(this.x - 10, this.y);
+            //}
         } else if (event.key === this.rightKey) {
-            if (this.x <= 700 - this.width - 10) {
+            this.currentDirection = "right"
+          //  if (this.x <= 700 - this.width - 10) {
                 //take into account the width of ship when going left
-                this.moveSprite(this.x + 10, this.y);
-            }
+           //     this.moveSprite(this.x + 10, this.y);
+           // }
         } else if (event.code === 'Space') {
             console.log('New bullet');
             if (bulletArray.length < 1) {
