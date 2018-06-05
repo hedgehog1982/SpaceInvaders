@@ -56,11 +56,10 @@ const bridgeBuilder = (startX, startY, height, width) => {
         buildingArray.push( new buildingSquare(x, startY, 8, 8, 'myCanvas'))
         buildingArray.push( new buildingSquare(x, startY + 8, 8, 8, 'myCanvas'))
         buildingArray.push( new buildingSquare(x, startY + 16 ,8, 8, 'myCanvas'))
-    }
+    };
 
-}
+};
 
-<<<<<<< HEAD
 
 const invaderBuilder = (startX, startY, height, width, link, targetCanvas ) => {
     for (let x = startX ; x < startX + width + 280; x = x + 50){
@@ -74,14 +73,8 @@ const invaderBuilder = (startX, startY, height, width, link, targetCanvas ) => {
         'myCanvas'
     ))
 
-        }
+        };
 
-    }
+    };
 
-}
-=======
-bridgeBuilder(100 ,540, 50, 50)
-bridgeBuilder(250 ,540, 50, 50)
-bridgeBuilder(400 ,540, 50, 50)
-bridgeBuilder(550 ,540, 50, 50)
->>>>>>> 977fb56c47bf7d298d2779e805ca983410ee2ad0
+};
