@@ -1,4 +1,5 @@
 let bulletArray = []; //store array of bullets ......
+let enemyBullets = []
 let enemyArray = []
 
 
