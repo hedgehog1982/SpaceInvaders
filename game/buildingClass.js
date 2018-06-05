@@ -12,9 +12,6 @@ class buildingSquare {
 
         this.drawWholeSquare();
     }
-    removeWholeSquare() {
-        this.targetCanvas.clearRect(this.x, this.y, this.width, this.height);
-    }
 
     hitSquare(){
         for (let x = this.x; x < this.x + this.width; x++ ){ // along x axis

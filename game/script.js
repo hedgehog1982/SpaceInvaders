@@ -47,12 +47,15 @@ enemyArray.push( new moveableStaticSprite(
     'myCanvas'
 ))
 
-buildingArray.push( new buildingSquare(
-    350,
-    350,
-    8,
-    8,
-    4,
-    'myCanvas'
-))
+
+//draw first building
+buildingArray.push( new buildingSquare(100, 592, 8, 8, 4, 'myCanvas'))
+buildingArray.push( new buildingSquare(108, 592, 8, 8, 4, 'myCanvas'))
+buildingArray.push( new buildingSquare(100, 586, 8, 8, 4, 'myCanvas'))
+buildingArray.push( new buildingSquare(108, 586, 8, 8, 4, 'myCanvas'))
+buildingArray.push( new buildingSquare(100, 578, 8, 8, 4, 'myCanvas'))
+buildingArray.push( new buildingSquare(108, 578, 8, 8, 4, 'myCanvas'))
+buildingArray.push( new buildingSquare(100, 570, 8, 8, 4, 'myCanvas'))
+buildingArray.push( new buildingSquare(108, 570, 8, 8, 4, 'myCanvas'))
+
 

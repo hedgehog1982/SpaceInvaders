@@ -29,6 +29,24 @@ setInterval(() => {
 
                 })
 
+                buildingArray.forEach((building,buildingIndex) => {
+                    if (building.x <= bullet.x + bullet.width  && bullet.x <= building.x + building.width  ) {
+                    if (bullet.y <= building.y + building.height ){  // needs to check
+                            console.log("a hit")
+                            var audio = new Audio('../sounds/explosion1.mp3');
+                            audio.play();
+                            bullet.removeSprite();
+                            bulletArray.splice(index, 1);
+                            building.hitSquare();
+                            if (building.destroyLimit <= 0){
+                                buildingArray.splice(buildingIndex, 1)
+                            }
+
+                    }
+                    }
+    
+                    })
+
         })
         
     }
