@@ -1,6 +1,6 @@
 let bulletArray = []; //store array of bullets ......
 let enemyArray = []
-let buildingArray = []
+
 
 let spaceShip = new controllableStaticSprite(
     330,
@@ -47,7 +47,3 @@ enemyArray.push( new moveableStaticSprite(
     'myCanvas'
 ))
 
-bridgeBuilder(50 ,540, 50, 80)
-bridgeBuilder(200 ,540, 50, 80)
-bridgeBuilder(350 ,540, 50, 80)
-bridgeBuilder(500 ,540, 50, 80)

@@ -1,3 +1,5 @@
+let buildingArray = []
+
 class buildingSquare {
     constructor(x, y, width, height, targetCanvas) {
         //destroyLimit is how often it is hit before the whole thing is destroyed
@@ -58,3 +60,7 @@ const bridgeBuilder = (startX, startY, height, width) => {
 
 }
 
+bridgeBuilder(100 ,540, 50, 50)
+bridgeBuilder(250 ,540, 50, 50)
+bridgeBuilder(400 ,540, 50, 50)
+bridgeBuilder(550 ,540, 50, 50)
