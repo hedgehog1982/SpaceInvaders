@@ -38,7 +38,9 @@ setInterval(() => {
                             bullet.removeSprite();
                             bulletArray.splice(index, 1);
                             building.hitSquare();
- 
+                            if (building.destroyLimit <= 0){
+                                buildingArray.splice(buildingIndex, 1)
+                            }
 
                     }
                     }
