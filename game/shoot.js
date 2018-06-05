@@ -1,5 +1,5 @@
 setInterval(() => {
-    console.log('checking bullets');
+    //console.log('checking bullets');
     bulletArray.forEach((bullet, index) => {
         //move bullet
 
@@ -15,8 +15,8 @@ setInterval(() => {
 
         //update the bullets
             enemyArray.forEach((enemy,enemyIndex) => {
-                if ( enemy.x <= bullet.x  && bullet.x <= enemy.x + enemy.width  ) {
-                if (bullet.y <= enemy.y){  // needs to check
+                if ( enemy.x <= bullet.x + bullet.width  && bullet.x <= enemy.x + enemy.width  ) {
+                if (bullet.y <= enemy.y + enemy.height - 5){  // needs to check
                         console.log("a hit")
                         bullet.removeSprite();
                         bulletArray.splice(index, 1);

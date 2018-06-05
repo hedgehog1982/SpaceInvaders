@@ -1,6 +1,6 @@
 setInterval(() => {
 
-    console.log(spaceShip)
+    //console.log(spaceShip)
     if (spaceShip.currentDirection === "left"){
         if (spaceShip.x >= 10) {
              spaceShip.moveSprite(spaceShip.x - 5, spaceShip.y)
