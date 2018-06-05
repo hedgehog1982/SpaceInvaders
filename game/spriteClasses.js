@@ -41,6 +41,7 @@ class staticSprite {
 class moveableStaticSprite extends staticSprite {
     constructor(x, y, width, height, imageLink, targetCanvas) {
         super(x, y, width, height, imageLink, targetCanvas);
+        this.currentDirection = "none"
         this.moveSprite = this.moveSprite.bind(this);
     }
 
@@ -71,7 +72,7 @@ class controllableStaticSprite extends staticSprite {
         this.moveSprite = this.moveSprite.bind(this);
         this.leftKey = leftKey;
         this.rightKey = rightKey;
-        this.currentDirection = "none"
+
         document.addEventListener(
             'keydown',
             () => this.moveKeySprite(event),

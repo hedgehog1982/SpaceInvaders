@@ -57,3 +57,4 @@ const bridgeBuilder = (startX, startY, height, width) => {
     }
 
 }
+
