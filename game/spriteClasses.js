@@ -92,19 +92,15 @@ class controllableStaticSprite extends staticSprite {
         console.log(event);
         if (event.key === this.leftKey) {
             this.currentDirection = "left"
-            //stop sprite going over the edge
-            //if (this.x >= 10) {
-            //    this.moveSprite(this.x - 10, this.y);
-            //}
         } else if (event.key === this.rightKey) {
             this.currentDirection = "right"
-          //  if (this.x <= 700 - this.width - 10) {
-                //take into account the width of ship when going left
-           //     this.moveSprite(this.x + 10, this.y);
-           // }
+
+            //space is shoot
         } else if (event.code === 'Space') {
             console.log('New bullet');
             if (bulletArray.length < 1) {
+                var audio = new Audio('../sounds/laser1.mp3');
+                audio.play();
                 bulletArray.push(
                     new moveableStaticSprite(
                         this.x + this.width / 2 - 10,

@@ -18,6 +18,8 @@ setInterval(() => {
                 if ( enemy.x <= bullet.x + bullet.width  && bullet.x <= enemy.x + enemy.width  ) {
                 if (bullet.y <= enemy.y + enemy.height - 5){  // needs to check
                         console.log("a hit")
+                        var audio = new Audio('../sounds/explosion1.mp3');
+                        audio.play();
                         bullet.removeSprite();
                         bulletArray.splice(index, 1);
                         enemy.removeSprite();
