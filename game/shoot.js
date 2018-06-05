@@ -2,7 +2,7 @@ setInterval(() => {
     //console.log('checking bullets');
     bulletArray.forEach((bullet, index) => {
         //move bullet
-
+        
         bullet.moveSprite(bullet.x, bullet.y - 5);
         console.log(bullet.y);
         if (bullet.y <= 105) {
@@ -24,6 +24,8 @@ setInterval(() => {
                         bulletArray.splice(index, 1);
                         enemy.removeSprite();
                         enemyArray.splice(enemyIndex, 1)
+                        hit = true;
+                        scored();
                 }
                 }
 
@@ -38,7 +40,7 @@ setInterval(() => {
                             bullet.removeSprite();
                             bulletArray.splice(index, 1);
                             building.hitSquare();
- 
+                            
 
                     }
                     }
@@ -46,6 +48,6 @@ setInterval(() => {
                     })
 
         })
-        
+        hit = false; 
     }
 , 20);
