@@ -2,7 +2,7 @@ setInterval(() => {
     //console.log('checking bullets');
     bulletArray.forEach((bullet, index) => {
         //move bullet
-        
+       // console.log(bullet)
         bullet.moveSprite(bullet.x, bullet.y - 5);
         console.log(bullet.y);
         if (bullet.y <= 105) {
@@ -40,7 +40,9 @@ setInterval(() => {
                             bullet.removeSprite();
                             bulletArray.splice(index, 1);
                             building.hitSquare();
-                            
+                            if (building.destroyLimit <= 0){
+                                buildingArray.splice(buildingIndex, 1)
+                            }
 
                     }
                     }

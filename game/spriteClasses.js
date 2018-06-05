@@ -2,8 +2,10 @@ class staticSprite {
     constructor(x, y, width, height, imageLink, targetCanvas) {
         this.displaySprite = this.displaySprite.bind(this);
         this.removeSprite = this.removeSprite.bind(this);
+        this.loaded = 0
         let newImage = new Image();
         newImage.onload = () => {
+            this.loaded = 1
             this.image = newImage;
             this.displaySprite();
         };
@@ -22,13 +24,17 @@ class staticSprite {
 
     displaySprite() {
         console.log('drawing');
-        this.targetCanvas.drawImage(
-            this.image,
-            this.x,
-            this.y,
-            this.width,
-            this.height
-        );
+        if (this.loaded === 1){
+            this.targetCanvas.drawImage(
+                this.image,
+                this.x,
+                this.y,
+                this.width,
+                this.height
+            );
+
+        }
+
     }
 }
 
@@ -104,7 +110,7 @@ class controllableStaticSprite extends staticSprite {
                 bulletArray.push(
                     new moveableStaticSprite(
                         this.x + this.width / 2 - 10,
-                        this.y,
+                        this.y - 20,
                         20,
                         20,
                         '../images/laser.png',
