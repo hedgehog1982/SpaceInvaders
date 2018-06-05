@@ -1,6 +1,6 @@
 let bulletArray = []; //store array of bullets ......
 let enemyBullets = []
-let enemyArray = []
+
 
 
 let spaceShip = new controllableStaticSprite(
