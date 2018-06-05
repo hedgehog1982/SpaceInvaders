@@ -3,9 +3,9 @@ setInterval(() => {
     bulletArray.forEach((bullet, index) => {
         //move bullet
 
-        bullet.moveSprite(bullet.x, bullet.y - 10);
+        bullet.moveSprite(bullet.x, bullet.y - 5);
         console.log(bullet.y);
-        if (bullet.y <= 110) {
+        if (bullet.y <= 105) {
             //remove bullet
             console.log(bullet.y);
             bullet.removeSprite();
@@ -30,4 +30,4 @@ setInterval(() => {
         })
         
     }
-, 50);
+, 20);
