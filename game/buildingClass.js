@@ -62,14 +62,14 @@ const bridgeBuilder = (startX, startY, height, width) => {
 
 
 const invaderBuilder = (startX, startY, height, width, link, targetCanvas ) => {
-    for (let x = startX ; x < startX + width + 280; x = x + 50){
-        for (let y= startY; y < startY + height + 200; y = y +50){
+    for (let x = startX ; x < startX + width + 300; x = x + 75){
+        for (let y= startY; y < startY + height + 200; y = y + 60){
         enemyArray.push(new moveableStaticSprite(
             x,  //x
         y ,  //y
         height,
         width,
-        '../images/invader.png',
+        '../images/trump.png',
         'myCanvas'
     ))
 

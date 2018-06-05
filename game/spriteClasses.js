@@ -112,9 +112,9 @@ class controllableStaticSprite extends staticSprite {
                     new moveableStaticSprite(
                         this.x + this.width / 2 - 10,
                         this.y - 20,
-                        20,
-                        20,
-                        '../images/laser.png',
+                        25,
+                        25,
+                        '../images/taco.png',
                         'myCanvas'
                     )
                 );

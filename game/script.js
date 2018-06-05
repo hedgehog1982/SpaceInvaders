@@ -7,7 +7,7 @@ let spaceShip = new controllableStaticSprite(
     621,
     70,
     70,
-    '../images/SpaceShip.png',
+    '../images/mexican.png',
     'myCanvas',
     'ArrowLeft',
     'ArrowRight'
@@ -19,5 +19,5 @@ bridgeBuilder(200 ,540, 50, 80);
 bridgeBuilder(350 ,540, 50, 80);
 bridgeBuilder(500 ,540, 50, 80);
 
-invaderBuilder(150, 100,40, 40, '../images/invader.png','myCanvas');
+invaderBuilder(150, 100,40, 40);
 
