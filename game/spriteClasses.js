@@ -113,7 +113,7 @@ class controllableStaticSprite extends staticSprite {
                         this.x + this.width / 2 - 10,
                         this.y - 20,
                         25,
-                        25,
+                        25 ,
                         '../images/taco.png',
                         'myCanvas'
                     )

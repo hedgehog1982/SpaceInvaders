@@ -53,3 +53,22 @@ setInterval(() => {
         hit = false; 
     }
 , 20);
+
+
+
+setInterval(() => {
+    
+enemyBullets.forEach((bullet, bulletIndex) => {
+    //move bullet
+   // console.log(bullet)
+    enemyBullets.moveSprite(bullet.x, bullet.y + 5);
+    console.log(bullet.y);
+    if (enemyBullets.y <= 700) {
+        //remove bullet
+        console.log(bullet.y);
+        enemyBullets.removeSprite();
+        enemyBullets.splice(bulletIndex, 1);
+        
+    }
+})
+}, 20);

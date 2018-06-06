@@ -1,4 +1,5 @@
 let bulletArray = []; //store array of bullets ......
+let enemyBullets = []
 let enemyArray = []
 
 
@@ -20,4 +21,5 @@ bridgeBuilder(350 ,540, 50, 80);
 bridgeBuilder(500 ,540, 50, 80);
 
 invaderBuilder(150, 100,40, 40);
+
 
