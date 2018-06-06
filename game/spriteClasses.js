@@ -115,7 +115,7 @@ class controllableStaticSprite extends staticSprite {
                         this.y - 20,
                         25,
                         25 ,
-                        '../images/taco.png',
+                        '../images/laser.png',
                         'myCanvas'
                     )
                 );

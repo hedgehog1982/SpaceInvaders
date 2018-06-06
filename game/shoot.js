@@ -130,7 +130,7 @@ const lowestSprites = () => {
             uniqueY[random] + 40,
             25,
             25,
-            '../images/taco.png',
+            '../images/laser.png',
             'myCanvas'
         )
     );

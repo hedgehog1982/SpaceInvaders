@@ -8,7 +8,7 @@ let spaceShip = new controllableStaticSprite(
     621,
     70,
     70,
-    '../images/mexican.png',
+    '../images/Spaceship.png',
     'myCanvas',
     'ArrowLeft',
     'ArrowRight'

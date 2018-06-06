@@ -1,12 +1,7 @@
 
-<<<<<<< HEAD
 
 let currentDirection = 'right';
 
-=======
-let currentDirection = 'right';
-
->>>>>>> 270e5c31a4317fdf911299796f09be84522ae415
 setInterval(() => {
     var dy = 10;
     var dx = 10;
@@ -25,6 +20,9 @@ setInterval(() => {
                 needToChange = true;
             }
         }
+        /*if (enemyShip.y >= 400) {
+            alert("Game Over!");
+        } */ 
     });
     enemyArray.forEach(enemyShip => {
         // if need to change is true move them all down
@@ -42,11 +40,8 @@ setInterval(() => {
         }
     }
 
-    //if (enemyShip.y >= 500) {
-    //    // alert("Game Over!");
-    //}
+   
 }, 50);
-<<<<<<< HEAD
 
-=======
->>>>>>> 270e5c31a4317fdf911299796f09be84522ae415
+
+
