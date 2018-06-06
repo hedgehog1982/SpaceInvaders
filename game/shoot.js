@@ -91,7 +91,7 @@ setInterval(() => {
 
         });
     });
-
+    enemyBullets = enemyBullets.filter((enemyBullets) => {return enemyBullets !== ""})
 }, 100);
 
 const lowestSprites = () => {
