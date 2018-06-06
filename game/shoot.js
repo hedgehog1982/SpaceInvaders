@@ -87,11 +87,17 @@ setInterval(() => {
                     }
                 }
             }
-
+            if (bullet.y >= 700){
+                bullet.removeSprite();
+                enemyBullets[index] = "";
+                }
 
         });
+       
     });
     enemyBullets = enemyBullets.filter((enemyBullets) => {return enemyBullets !== ""})
+   
+
 }, 100);
 
 const lowestSprites = () => {
