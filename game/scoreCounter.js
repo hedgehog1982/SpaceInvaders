@@ -1,5 +1,8 @@
 var score = 0;
 var hit = false;
+var spaceShipHit = false;
+
+var hearts = 3;
 
 const scored = () =>{  
     if (hit == true) {
@@ -15,3 +18,13 @@ const scored = () =>{
 
 };
 
+const removeHearts = () =>{
+    if (spaceShipHit == true){
+        hearts -= 1
+        console.log(hearts)
+        if (hearts == 0){
+            alert("you loose")
+        };
+    }
+  
+};

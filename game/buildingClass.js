@@ -69,15 +69,15 @@ bridgeBuilder(500 ,500, 50, 80);
 
 
 
-const invaderBuilder = (startX, startY, height, width, link, targetCanvas ) => {
-    for (let x = startX ; x < startX + width + 300; x = x + 75){
-        for (let y= startY; y < startY + height + 200; y = y + 60){
+const invaderBuilder = (startX, startY, height, width) => {
+    for (let x = startX ; x < startX + 500; x = x + 115){
+        for (let y= startY; y < startY + 200; y = y + 50){
         enemyArray.push(new moveableStaticSprite(
-            x,  //x
+        x,  //x
         y ,  //y
         height,
         width,
-        '../images/enemy.png',
+        '../images/enemy2.png',
         'myCanvas'
     ))
 
@@ -87,4 +87,4 @@ const invaderBuilder = (startX, startY, height, width, link, targetCanvas ) => {
 
 };
 
-invaderBuilder(150, 100,40, 40);
+invaderBuilder(150, 150,40 ,40);

@@ -3,8 +3,8 @@
 let currentDirection = 'right';
 
 setInterval(() => {
-    var dy = 10;
-    var dx = 10;
+    var dy = 3;
+    var dx = 3;
     let needToChange = false;
     //move all
     enemyArray.forEach(enemyShip => {

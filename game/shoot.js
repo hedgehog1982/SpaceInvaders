@@ -93,14 +93,30 @@ setInterval(() => {
                 bullet.removeSprite();
                 enemyBullets[index] = "";
                 }
+                
 
         });
-       
+        if (spaceShip.x <= bullet.x + bullet.width && bullet.x <= spaceShip.x + spaceShip.width) {
+            if (spaceShip.y <= bullet.y + bullet.height &&
+                bullet.y <= spaceShip.y + spaceShip.height) {
+                   
+                    console.log('spaceship hit');
+                    var audio = new Audio('../sounds/explosion1.mp3');
+                    audio.play();
+                    bullet.removeSprite();
+                    enemyBullets[index] = "";
+                    spaceShip.removeSprite();
+                    spaceShipHit = true;
+                    removeHearts();
+                    spaceShip.displaySprite();
+                }
+            };
     });
     enemyBullets = enemyBullets.filter((enemyBullets) => {return enemyBullets !== ""})
-   
+    
+    spaceShipHit = false;
 
-}, 100);
+}, 30);
 
 const lowestSprites = () => {
     let uniqueX = [];
