@@ -21,7 +21,15 @@ const removeHearts = () =>{
     if (spaceShipHit == true){
         hearts -= 1
         console.log(hearts)
-        
+         if (hearts < 3){
+        ctx.clearRect(400, 0,80 ,80);
+    }
+    if (hearts < 2){
+        ctx.clearRect(500, 0,80 ,80);
+    }
+    if (hearts < 1){
+        ctx.clearRect(600, 0,80 ,80);
+    }
         if (hearts == 0){
             spaceShip.removeSprite();
             
@@ -43,3 +51,4 @@ const removeHearts = () =>{
     }
   
 };
+

@@ -124,7 +124,9 @@ setInterval(() => {
                 spaceShip.removeSprite();
                 spaceShipHit = true;
                 spaceShip.displaySprite();
+                
                 removeHearts();
+                
                 
             }
         }

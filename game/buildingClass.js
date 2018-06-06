@@ -1,5 +1,6 @@
 let buildingArray = [];
 let enemyArray = [];
+let heartArray = [];
 
 class buildingSquare {
     constructor(x, y, width, height, targetCanvas) {
@@ -61,10 +62,10 @@ const bridgeBuilder = (startX, startY, height, width) => {
 
 };
 
-bridgeBuilder(50 ,500, 30, 80);
-bridgeBuilder(200 ,500, 30, 80);
-bridgeBuilder(350 ,500, 30, 80);
-bridgeBuilder(500 ,500, 30, 80);
+bridgeBuilder(50 ,500, 25, 85);
+bridgeBuilder(200 ,500, 25, 85);
+bridgeBuilder(350 ,500, 25, 85);
+bridgeBuilder(500 ,500, 25, 85);
 
 
 
@@ -88,3 +89,22 @@ const invaderBuilder = (startX, startY, height, width) => {
 };
 
 invaderBuilder(150, 150,40 ,40);
+
+const heartBuilder = (startX, startY, height, width) => {
+   
+        heartArray.push(new staticSprite(
+        startX,  //x
+        startY ,  //y
+        height,
+        width,
+        '../images/Heart.png',
+        'myCanvas'
+    ))
+
+        };
+
+  
+
+  heartBuilder(400, 0,80 ,80);
+  heartBuilder(500, 0,80 ,80);
+  heartBuilder(600, 0,80 ,80);
