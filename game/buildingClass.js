@@ -67,6 +67,8 @@ bridgeBuilder(350 ,500, 50, 80);
 bridgeBuilder(500 ,500, 50, 80);
 
 
+
+
 const invaderBuilder = (startX, startY, height, width, link, targetCanvas ) => {
     for (let x = startX ; x < startX + width + 300; x = x + 75){
         for (let y= startY; y < startY + height + 200; y = y + 60){
@@ -84,3 +86,5 @@ const invaderBuilder = (startX, startY, height, width, link, targetCanvas ) => {
     };
 
 };
+
+invaderBuilder(150, 100,40, 40);
