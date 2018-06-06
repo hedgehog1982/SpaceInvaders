@@ -40,7 +40,7 @@ const bridgeBuilder = (startX, startY, height, width) => {
     for (let y = startY + 8; y < startY + height; y = y + 8){
         buildingArray.push( new buildingSquare(startX, y, 8, 8, 'myCanvas'))
         buildingArray.push( new buildingSquare(startX + 8, y, 8, 8, 'myCanvas'))
-        buildingArray.push( new buildingSquare(startX + 16, y ,8, 8, 'myCanvas'))
+        //buildingArray.push( new buildingSquare(startX + 16, y ,8, 8, 'myCanvas'))
     }
 
 
@@ -48,7 +48,7 @@ const bridgeBuilder = (startX, startY, height, width) => {
     for (let y = startY + 8; y < startY + height; y = y + 8){
         buildingArray.push( new buildingSquare(startX + width , y, 8, 8, 'myCanvas'))
         buildingArray.push( new buildingSquare(startX + width + 8, y, 8, 8, 'myCanvas'))
-        buildingArray.push( new buildingSquare(startX + width + 16, y , 8, 8, 'myCanvas'))
+        //buildingArray.push( new buildingSquare(startX + width + 16, y , 8, 8, 'myCanvas'))
     }
 
     //draw top
@@ -56,15 +56,15 @@ const bridgeBuilder = (startX, startY, height, width) => {
     for (let x = startX + 16; x < startX + width + 8; x = x + 8){
         buildingArray.push( new buildingSquare(x, startY, 8, 8, 'myCanvas'))
         buildingArray.push( new buildingSquare(x, startY + 8, 8, 8, 'myCanvas'))
-        buildingArray.push( new buildingSquare(x, startY + 16 ,8, 8, 'myCanvas'))
+       // buildingArray.push( new buildingSquare(x, startY + 16 ,8, 8, 'myCanvas'))
     };
 
 };
 
-bridgeBuilder(50 ,500, 50, 80);
-bridgeBuilder(200 ,500, 50, 80);
-bridgeBuilder(350 ,500, 50, 80);
-bridgeBuilder(500 ,500, 50, 80);
+bridgeBuilder(50 ,500, 30, 80);
+bridgeBuilder(200 ,500, 30, 80);
+bridgeBuilder(350 ,500, 30, 80);
+bridgeBuilder(500 ,500, 30, 80);
 
 
 
