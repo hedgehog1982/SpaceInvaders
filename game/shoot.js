@@ -55,9 +55,6 @@ setInterval(() => {
     }
 , 20);
 
-<<<<<<< HEAD
-
-
 setInterval(() => {
     
 enemyBullets.forEach((bullet, bulletIndex) => {
@@ -74,7 +71,7 @@ enemyBullets.forEach((bullet, bulletIndex) => {
     }
 })
 }, 20);
-=======
+
 const lowestSprites = () => {
     let uniqueX = []
     let uniqueY = []
@@ -96,11 +93,4 @@ const lowestSprites = () => {
     console.log(uniqueX)
     console.log(uniqueY)
     
-
-
-
-
-
-
-}
->>>>>>> c11f8cd5d2440325bf053f0b885984562ce2feb0
+};
