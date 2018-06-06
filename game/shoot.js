@@ -123,8 +123,9 @@ setInterval(() => {
                 enemyBullets[index] = '';
                 spaceShip.removeSprite();
                 spaceShipHit = true;
-                removeHearts();
                 spaceShip.displaySprite();
+                removeHearts();
+                
             }
         }
     });
