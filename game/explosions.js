@@ -86,7 +86,7 @@ class animatedSprite {
     }
 }
 //(x, y, width, height, imageMap, targetCanvas, refreshRate, animationArray )
-let test = new animatedSprite(
+/*let test = new animatedSprite(
     40,
     40,
     40,
@@ -97,4 +97,4 @@ let test = new animatedSprite(
     'explosionCanvas',
     50,
     explosionMap
-);
+);*/

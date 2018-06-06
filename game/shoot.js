@@ -1,4 +1,4 @@
-let bulletSpeed = 4
+let bulletSpeed = 4;
 
 setInterval(() => {
     //console.log('checking bullets');
@@ -20,7 +20,8 @@ setInterval(() => {
                 enemy.x <= bullet.x + bullet.width &&
                 bullet.x <= enemy.x + enemy.width
             ) {
-                if (bullet.y <= enemy.y + enemy.height - 5) {
+            if (enemy.y <= bullet.y + bullet.height &&
+                    bullet.y <= enemy.y + enemy.height) {
                     // needs to check
                     console.log('a hit');
                     var audio = new Audio('../sounds/explosion1.mp3');
@@ -30,6 +31,18 @@ setInterval(() => {
                     enemy.removeSprite();
                     enemyArray.splice(enemyIndex, 1);
                     hit = true;
+                    let test = new animatedSprite(
+                        enemy.x,
+                        enemy.y,
+                        enemy.width,
+                        enemy.height,
+                        64,
+                        64,
+                        '../images/Explo.png',
+                        'explosionCanvas',
+                        50,
+                        explosionMap
+                    );
                     scored();
                 }
             }
@@ -40,7 +53,8 @@ setInterval(() => {
                 building.x <= bullet.x + bullet.width &&
                 bullet.x <= building.x + building.width
             ) {
-                if (bullet.y <= building.y + building.height) {
+                if (building.y <= bullet.y + bullet.height &&
+                    bullet.y <= building.y + building.height) {
                     // needs to check
                     console.log('a hit');
                     var audio = new Audio('../sounds/explosion1.mp3');
@@ -82,40 +96,43 @@ setInterval(() => {
                     var audio = new Audio('../sounds/explosion1.mp3');
                     //audio.play();
                     bullet.removeSprite();
-                    enemyBullets[index] = "";
+                    enemyBullets[index] = '';
                     building.hitSquare();
                     if (building.destroyLimit <= 0) {
                         buildingArray.splice(buildingIndex, 1);
                     }
                 }
             }
-            if (bullet.y >= 700){
+            if (bullet.y >= 700) {
                 bullet.removeSprite();
-                enemyBullets[index] = "";
-                }
-                
-
+                enemyBullets[index] = '';
+            }
         });
-        if (spaceShip.x <= bullet.x + bullet.width && bullet.x <= spaceShip.x + spaceShip.width) {
-            if (spaceShip.y <= bullet.y + bullet.height &&
-                bullet.y <= spaceShip.y + spaceShip.height) {
-                   
-                    console.log('spaceship hit');
-                    var audio = new Audio('../sounds/explosion1.mp3');
-                    audio.play();
-                    bullet.removeSprite();
-                    enemyBullets[index] = "";
-                    spaceShip.removeSprite();
-                    spaceShipHit = true;
-                    removeHearts();
-                    spaceShip.displaySprite();
-                }
-            };
+        if (
+            spaceShip.x <= bullet.x + bullet.width &&
+            bullet.x <= spaceShip.x + spaceShip.width
+        ) {
+            if (
+                spaceShip.y <= bullet.y + bullet.height &&
+                bullet.y <= spaceShip.y + spaceShip.height
+            ) {
+                console.log('spaceship hit');
+                var audio = new Audio('../sounds/explosion1.mp3');
+                audio.play();
+                bullet.removeSprite();
+                enemyBullets[index] = '';
+                spaceShip.removeSprite();
+                spaceShipHit = true;
+                removeHearts();
+                spaceShip.displaySprite();
+            }
+        }
     });
-    enemyBullets = enemyBullets.filter((enemyBullets) => {return enemyBullets !== ""})
-    
-    spaceShipHit = false;
+    enemyBullets = enemyBullets.filter(enemyBullets => {
+        return enemyBullets !== '';
+    });
 
+    spaceShipHit = false;
 }, 30);
 
 const lowestSprites = () => {
@@ -152,11 +169,6 @@ const lowestSprites = () => {
     );
 };
 
-
 setInterval(() => {
     lowestSprites();
 }, 500);
-
-
-
-
