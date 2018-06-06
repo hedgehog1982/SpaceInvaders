@@ -1,6 +1,5 @@
 let enemyArray = [];
 
-
 ////for loop needed here to push lots to an array
 enemyArray.push(new moveableStaticSprite(
     30,

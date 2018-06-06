@@ -19,6 +19,7 @@ class staticSprite {
             .getContext('2d');
     }
     removeSprite() {
+        //explosion image
         this.targetCanvas.clearRect(this.x, this.y, this.width, this.height);
     }
 

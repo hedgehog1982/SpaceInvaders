@@ -50,6 +50,36 @@ setInterval(() => {
                     })
 
         })
+        lowestSprites()
         hit = false; 
     }
 , 20);
+
+const lowestSprites = () => {
+    let uniqueX = []
+    let uniqueY = []
+    //get all x values 
+    enemyArray.forEach(enemy => {
+        if (uniqueX.indexOf(enemy.x) === -1){ //if not contained in index push new values
+            uniqueX.push(enemy.x)
+            uniqueY.push(enemy.y)
+        } else {  //x exists and we have its array 
+            //find current X in X index and finding corresponding Y
+            let indexOfXValue = uniqueX.indexOf(enemy.x)
+            if (uniqueY[indexOfXValue] < enemy.y) { //corresponding Y value is more than replace
+                uniqueY[indexOfXValue] = enemy.y
+            }
+        }
+
+    })
+    console.log("start of values")
+    console.log(uniqueX)
+    console.log(uniqueY)
+    
+
+
+
+
+
+
+}
