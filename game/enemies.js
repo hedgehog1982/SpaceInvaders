@@ -1,10 +1,13 @@
 
 
 let currentDirection = 'right';
+let enemyUpdateSpeed = 20
+var dy = 3;    // tie this value to enemyArray.length
+var dx = 2;
 
 setInterval(() => {
-    var dy = 3;
-    var dx = 3;
+
+
     let needToChange = false;
     //move all
     enemyArray.forEach(enemyShip => {
@@ -33,6 +36,8 @@ setInterval(() => {
     });
 
     if (needToChange === true) {
+        dx += 0.1
+        console.log()
         if (currentDirection === 'left') {
             currentDirection = 'right';
         } else {
@@ -41,7 +46,7 @@ setInterval(() => {
     }
 
    
-}, 50);
+}, enemyUpdateSpeed);
 
 
 
