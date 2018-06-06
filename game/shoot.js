@@ -72,10 +72,6 @@ enemyBullets.forEach((bullet, bulletIndex) => {
 })
 }, 20);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> f3febbe0d3612b1d1d3cde6f95c222d222951064
 const lowestSprites = () => {
     let uniqueX = []
     let uniqueY = []
@@ -96,11 +92,6 @@ const lowestSprites = () => {
     console.log("start of values")
     console.log(uniqueX)
     console.log(uniqueY)
-<<<<<<< HEAD
-    
-};
-=======
 
 }
 
->>>>>>> f3febbe0d3612b1d1d3cde6f95c222d222951064
