@@ -60,10 +60,10 @@ const bridgeBuilder = (startX, startY, height, width) => {
 
 };
 
-bridgeBuilder(50 ,540, 50, 80);
-bridgeBuilder(200 ,540, 50, 80);
-bridgeBuilder(350 ,540, 50, 80);
-bridgeBuilder(500 ,540, 50, 80);
+bridgeBuilder(50 ,500, 50, 80);
+bridgeBuilder(200 ,500, 50, 80);
+bridgeBuilder(350 ,500, 50, 80);
+bridgeBuilder(500 ,500, 50, 80);
 
 
 const invaderBuilder = (startX, startY, height, width, link, targetCanvas ) => {
