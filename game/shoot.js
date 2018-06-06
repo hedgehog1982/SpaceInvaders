@@ -55,6 +55,24 @@ setInterval(() => {
     }
 , 20);
 
+setInterval(() => {
+    
+enemyBullets.forEach((bullet, bulletIndex) => {
+    //move bullet
+   // console.log(bullet)
+    enemyBullets.moveSprite(bullet.x, bullet.y + 5);
+    console.log(bullet.y);
+    if (enemyBullets.y <= 700) {
+        //remove bullet
+        console.log(bullet.y);
+        enemyBullets.removeSprite();
+        enemyBullets.splice(bulletIndex, 1);
+        
+    }
+})
+}, 20);
+
+
 const lowestSprites = () => {
     let uniqueX = []
     let uniqueY = []
@@ -75,4 +93,6 @@ const lowestSprites = () => {
     console.log("start of values")
     console.log(uniqueX)
     console.log(uniqueY)
+
 }
+
