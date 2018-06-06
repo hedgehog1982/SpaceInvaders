@@ -1,4 +1,5 @@
-let buildingArray = []
+let buildingArray = [];
+let enemyArray = [];
 
 class buildingSquare {
     constructor(x, y, width, height, targetCanvas) {
