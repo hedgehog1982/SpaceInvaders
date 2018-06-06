@@ -75,11 +75,4 @@ const lowestSprites = () => {
     console.log("start of values")
     console.log(uniqueX)
     console.log(uniqueY)
-    
-
-
-
-
-
-
 }
