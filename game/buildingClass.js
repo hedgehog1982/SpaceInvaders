@@ -7,7 +7,7 @@ class buildingSquare {
         this.y = y
         this.width = width 
         this.height = height
-        this.destroyLimit = 3  // set here rather than calling it 
+        this.destroyLimit = 2  // set here rather than calling it 
         this.targetCanvas = document
             .getElementById(targetCanvas)
             .getContext('2d');

@@ -1,3 +1,5 @@
+let bulletSpeed = 4
+
 setInterval(() => {
     //console.log('checking bullets');
     bulletArray.forEach((bullet, index) => {
@@ -63,7 +65,7 @@ setInterval(() => {
     enemyBullets.forEach((bullet, index) => {
         //move bullet
         // console.log(bullet)
-        bullet.moveSprite(bullet.x, bullet.y + 5);
+        bullet.moveSprite(bullet.x, bullet.y + bulletSpeed);
 
         // is it hitting a building
         buildingArray.forEach((building, buildingIndex) => {
@@ -92,7 +94,7 @@ setInterval(() => {
         });
     });
     enemyBullets = enemyBullets.filter((enemyBullets) => {return enemyBullets !== ""})
-}, 100);
+}, 20);
 
 const lowestSprites = () => {
     let uniqueX = [];
@@ -113,9 +115,6 @@ const lowestSprites = () => {
             }
         }
     });
-    console.log('start of values');
-    console.log(uniqueX);
-    console.log(uniqueY);
     var audio = new Audio('../sounds/laser1.mp3');
     let random = Math.floor(Math.random() * uniqueX.length);
     audio.play();
@@ -134,6 +133,6 @@ const lowestSprites = () => {
 
 setInterval(() => {
     lowestSprites();
-}, 1500);
+}, 500);
 
 
