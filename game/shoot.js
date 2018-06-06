@@ -59,8 +59,6 @@ setInterval(() => {
 
 setInterval(() => {
     // make a blank array
-    let updatedBullets = [];
-
     console.log(enemyBullets.length);
     enemyBullets.forEach((bullet, index) => {
         //move bullet
@@ -82,13 +80,15 @@ setInterval(() => {
                     var audio = new Audio('../sounds/explosion1.mp3');
                     //audio.play();
                     bullet.removeSprite();
-                    enemyBullets.splice(index, 1);
+                    enemyBullets[index] = "";
                     building.hitSquare();
                     if (building.destroyLimit <= 0) {
                         buildingArray.splice(buildingIndex, 1);
                     }
                 }
             }
+
+
         });
     });
 
@@ -98,7 +98,7 @@ const lowestSprites = () => {
     let uniqueX = [];
     let uniqueY = [];
     //get all x values
-    enemyArray.forEach(enemy => {
+    enemyArray.slice(0).forEach(enemy => {
         if (uniqueX.indexOf(enemy.x) === -1) {
             //if not contained in index push new values
             uniqueX.push(enemy.x);
@@ -131,6 +131,9 @@ const lowestSprites = () => {
     );
 };
 
+
 setInterval(() => {
     lowestSprites();
 }, 1500);
+
+
