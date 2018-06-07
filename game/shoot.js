@@ -172,6 +172,6 @@ const lowestSprites = () => {
     );
 };
 
-setInterval(() => {
+let enemyShootInterval = setInterval(() => {
     lowestSprites();
 }, 500);

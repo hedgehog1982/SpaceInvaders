@@ -104,7 +104,7 @@ class controllableStaticSprite extends staticSprite {
             this.currentDirection = "right"
 
             //space is shoot
-        } else if (event.code === 'Space') {
+        } else if (event.code === 'Space' && hearts !== 0) {
             console.log('New bullet');
             if (bulletArray.length < 1) {
                 var audio = new Audio('../sounds/laser1.mp3');
