@@ -14,18 +14,28 @@ let spaceShip = new controllableStaticSprite(
     'ArrowRight'
 );
 
-
-
 invaderBuilder(150, 100,40, 40);
 
+let mainTimer
 
-//move tied to one event?
-const mainTimer = setInterval(() => {
-    moveShip();
-    enemyMovement();
-    enemyShootInterval()
-    dealWithBullets()
+const startGame = () => {
+  //move tied to one event?
+  let elem = document.getElementById('start');
+  elem.parentNode.removeChild(elem);
 
-}, 20); 
+         mainTimer = setInterval(() => {
+            moveShip();
+            enemyMovement();
+            enemyShootInterval()
+            dealWithBullets()
+
+        }, 20); 
+
+  }
+
+
+
+
+
 
 

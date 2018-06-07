@@ -24,7 +24,6 @@ class staticSprite {
     }
 
     displaySprite() {
-        console.log('drawing');
         if (this.loaded === 1){
             this.targetCanvas.drawImage(
                 this.image,
