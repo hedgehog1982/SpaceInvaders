@@ -17,14 +17,14 @@ class animatedSprite {
         refreshRate,
         animationArray
     ) {
-        console.log("constructing")
+
         this.displaySprite = this.displaySprite.bind(this);
         this.removeSprite = this.removeSprite.bind(this);
 
         this.loaded = 0;
         let newImage = new Image();
         newImage.onload = () => {
-            console.log("loaded explosion")
+        
             this.loaded = 1;
             this.image = newImage;
             this.displaySprite();
@@ -54,8 +54,7 @@ class animatedSprite {
     //
 
     displaySprite() {
-        this.targetCanvas.clearRect(this.x, this.y, this.width, this.height);
-        console.log('drawing');
+        this.targetCanvas.clearRect(this.x, this.y, this.width, this.height)
         let sourceX = this.animationArray[this.currentFrame]
         let sourceY = this.animationArray[this.currentFrame + 1]
         if (this.loaded === 1) {
@@ -75,10 +74,8 @@ class animatedSprite {
         }
         this.currentFrame = this.currentFrame + 2;
         if (this.currentFrame < this.animationArray.length ){
-            console.log("next frame")
             setTimeout(this.displaySprite, this.refreshRate)
         } else {
-            console.log("removing")
             this.removeSprite()
         }
         

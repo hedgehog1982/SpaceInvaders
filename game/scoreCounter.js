@@ -31,8 +31,8 @@ const removeHearts = () =>{
         ctx.clearRect(600, 0,80 ,80);
     }
         if (hearts == 0){
-            window.clearInterval(enemyMovementInterval)
-            window.clearInterval(enemyShootInterval)
+            window.clearInterval(mainTimer)
+
             spaceShip.removeSprite();
             
             let test = new animatedSprite(

@@ -1,4 +1,4 @@
-setInterval(() => {
+const moveShip = () => {
 
     //console.log(spaceShip)
     if (spaceShip.currentDirection === "left"){
@@ -10,4 +10,4 @@ setInterval(() => {
             spaceShip.moveSprite(spaceShip.x + 5, spaceShip.y)
         }
     }
-}, 20); 
+}

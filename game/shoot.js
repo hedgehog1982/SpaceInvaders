@@ -1,12 +1,14 @@
 let bulletSpeed = 4;
+let shootCounter = 0;
+let shootSpeed = 5
 
-setInterval(() => {
+const dealWithBullets = () => {
     //console.log('checking bullets');
     bulletArray.forEach((bullet, index) => {
         //move bullet
         // console.log(bullet)
         bullet.moveSprite(bullet.x, bullet.y - 5);
-        console.log(bullet.y);
+      
         if (bullet.y <= 105) {
             //remove bullet
             console.log(bullet.y);
@@ -83,11 +85,10 @@ setInterval(() => {
     });
 
     hit = false;
-}, 20);
+}
 
 setInterval(() => {
-    // make a blank array
-    console.log(enemyBullets.length);
+
     enemyBullets.forEach((bullet, index) => {
         //move bullet
         // console.log(bullet)
@@ -210,6 +211,9 @@ const lowestSprites = () => {
     );
 };
 
-let enemyShootInterval = setInterval(() => {
-    lowestSprites();
-}, 500);
+let enemyShootInterval = () => {
+    if (shootCounter % shootSpeed === 0){ //shoot every 20 frames
+        lowestSprites();
+    }
+    shootCounter ++ 
+}

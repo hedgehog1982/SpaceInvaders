@@ -5,7 +5,7 @@ let enemyUpdateSpeed = 20
 var dy = 3;    // tie this value to enemyArray.length
 var dx = 2;
 
-let enemyMovementInterval = setInterval(() => { //need to stop when hearts is zero
+const enemyMovement = () => { //need to stop when hearts is zero
 
 
     let needToChange = false;
@@ -46,7 +46,7 @@ let enemyMovementInterval = setInterval(() => { //need to stop when hearts is ze
     }
 
    
-}, enemyUpdateSpeed);
+}
 
 
 
