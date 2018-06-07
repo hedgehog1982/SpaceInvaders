@@ -1,5 +1,5 @@
 class staticSprite {
-    constructor(x, y, width, height, imageLink, targetCanvas) {
+    constructor(x, y, width, height, imageLink, targetCanvas, lives) {
         this.displaySprite = this.displaySprite.bind(this);
         this.removeSprite = this.removeSprite.bind(this);
         this.loaded = 0
@@ -17,10 +17,16 @@ class staticSprite {
         this.targetCanvas = document
             .getElementById(targetCanvas)
             .getContext('2d');
+        this.lives = lives === undefined ? 1 : lives; 
     }
     removeSprite() {
         //explosion image
-        this.targetCanvas.clearRect(this.x, this.y, this.width, this.height);
+        this.lives--
+        console.log("lives ", this.lives)
+        if (this.lives <= 0){
+            this.targetCanvas.clearRect(this.x, this.y, this.width, this.height);
+        }
+
     }
 
     displaySprite() {
@@ -39,8 +45,8 @@ class staticSprite {
 }
 
 class moveableStaticSprite extends staticSprite {
-    constructor(x, y, width, height, imageLink, targetCanvas) {
-        super(x, y, width, height, imageLink, targetCanvas);
+    constructor(x, y, width, height, imageLink, targetCanvas, lives) {
+        super(x, y, width, height, imageLink, targetCanvas,lives);
         this.currentDirection = "none"
         this.moveSprite = this.moveSprite.bind(this);
     }
@@ -64,10 +70,11 @@ class controllableStaticSprite extends staticSprite {
         height,
         imageLink,
         targetCanvas,
+        lives,
         leftKey,
         rightKey
     ) {
-        super(x, y, width, height, imageLink, targetCanvas);
+        super(x, y, width, height, imageLink, targetCanvas,lives);
         this.moveKeySprite = this.moveKeySprite.bind(this);
         this.moveSprite = this.moveSprite.bind(this);
         this.leftKey = leftKey;

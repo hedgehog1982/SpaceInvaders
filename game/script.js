@@ -10,6 +10,7 @@ let spaceShip = new controllableStaticSprite(
     70,
     '../images/Spaceship.png',
     'myCanvas',
+    3,
     'ArrowLeft',
     'ArrowRight'
 );
@@ -24,6 +25,20 @@ const startGame = () => {
   elem.parentNode.removeChild(elem);
 
          mainTimer = setInterval(() => {
+            if (enemyArray.length === 0){
+                enemyArray.push(new moveableStaticSprite(
+                    -350,  //x
+                    100 ,  //y
+                    200,
+                    200,
+                    '../images/enemy.png',
+                    'myCanvas',
+                    3
+                ))
+                shootSpeed = 10
+
+            }
+
             moveShip();
             enemyMovement();
             enemyShootInterval()

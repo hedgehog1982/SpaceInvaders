@@ -79,7 +79,8 @@ const invaderBuilder = (startX, startY, height, width) => {
         height,
         width,
         '../images/enemy2.png',
-        'myCanvas'
+        'myCanvas',
+        1
     ))
 
         };

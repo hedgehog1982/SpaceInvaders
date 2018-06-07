@@ -32,7 +32,9 @@ const dealWithBullets = () => {
                     bullet.removeSprite();
                     bulletArray.splice(index, 1);
                     enemy.removeSprite();
-                    enemyArray.splice(enemyIndex, 1);
+                    if (enemy.lives <= 0){
+                        enemyArray.splice(enemyIndex, 1);
+                    }
                     hit = true;
                     let explosion = new animatedSprite(
                         enemy.x,
@@ -75,6 +77,7 @@ const dealWithBullets = () => {
                     );
                     audio.play();
                     bullet.removeSprite();
+                
                     bulletArray.splice(index, 1);
                     building.hitSquare();
                     if (building.destroyLimit <= 0) {
@@ -194,8 +197,12 @@ const dealWithEnemyBullets = () => {
 const lowestSprites = () => {
     let uniqueX = [];
     let uniqueY = [];
+    let width 
+    let height
     //get all x values
     enemyArray.slice(0).forEach(enemy => {
+        width = enemy.width / 2
+        height = enemy.height
         if (uniqueX.indexOf(enemy.x) === -1) {
             //if not contained in index push new values
             uniqueX.push(enemy.x);
@@ -215,12 +222,13 @@ const lowestSprites = () => {
     audio.play();
     enemyBullets.push(
         new moveableStaticSprite(
-            uniqueX[random] + 10,
-            uniqueY[random] + 40,
+            uniqueX[random] + width,
+            uniqueY[random] + height,
             25,
             25,
             '../images/laser.png',
-            'myCanvas'
+            'myCanvas',
+            1
         )
     );
 };
