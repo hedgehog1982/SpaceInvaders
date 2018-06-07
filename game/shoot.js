@@ -31,7 +31,7 @@ setInterval(() => {
                     enemy.removeSprite();
                     enemyArray.splice(enemyIndex, 1);
                     hit = true;
-                    let test = new animatedSprite(
+                    let explosion = new animatedSprite(
                         enemy.x,
                         enemy.y,
                         enemy.width,
@@ -58,6 +58,18 @@ setInterval(() => {
                     // needs to check
                     console.log('a hit');
                     var audio = new Audio('../sounds/explosion1.mp3');
+                    let explosion = new animatedSprite(
+                        bullet.x,
+                        bullet.y - 15,
+                        20,  //smaller explosions for wall?
+                        20,
+                        64,
+                        64,
+                        '../images/Explo.png',
+                        'explosionCanvas',
+                        50,
+                        explosionMap
+                    );
                     audio.play();
                     bullet.removeSprite();
                     bulletArray.splice(index, 1);
@@ -94,6 +106,21 @@ setInterval(() => {
                     // needs to check
                     console.log('a hit');
                     var audio = new Audio('../sounds/explosion1.mp3');
+                    //explosion?
+                    let explosion = new animatedSprite(
+                        bullet.x,
+                        bullet.y + 15,
+                        20,  //smaller explosions for wall?
+                        20,
+                        64,
+                        64,
+                        '../images/Explo.png',
+                        'explosionCanvas',
+                        50,
+                        explosionMap
+                    );
+
+
                     //audio.play();
                     bullet.removeSprite();
                     enemyBullets[index] = '';

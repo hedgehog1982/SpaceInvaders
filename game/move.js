@@ -10,4 +10,4 @@ setInterval(() => {
             spaceShip.moveSprite(spaceShip.x + 5, spaceShip.y)
         }
     }
-}, 10); 
+}, 20); 
