@@ -20,7 +20,7 @@ invaderBuilder(150, 100,40, 40);
 
 
 //move tied to one event?
-setInterval(() => {
+const mainTimer = setInterval(() => {
     moveShip();
     enemyMovement();
     enemyShootInterval()
