@@ -165,7 +165,18 @@ setInterval(() => {
                 spaceShip.removeSprite();
                 spaceShipHit = true;
                 spaceShip.displaySprite();
-                
+                let explosion = new animatedSprite(
+                    bullet.x,
+                    bullet.y + 15,
+                    20,  //smaller explosions for wall?
+                    20,
+                    64,
+                    64,
+                    '../images/Explo.png',
+                    'explosionCanvas',
+                    50,
+                    explosionMap
+                );
                 removeHearts();
                 
                 
