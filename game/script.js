@@ -19,3 +19,13 @@ let spaceShip = new controllableStaticSprite(
 invaderBuilder(150, 100,40, 40);
 
 
+//move tied to one event?
+setInterval(() => {
+    moveShip();
+    enemyMovement();
+    enemyShootInterval()
+    dealWithBullets()
+
+}, 20); 
+
+

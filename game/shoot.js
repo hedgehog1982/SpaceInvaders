@@ -1,6 +1,7 @@
 let bulletSpeed = 4;
+let shootCounter = 0;
 
-setInterval(() => {
+const dealWithBullets = () => {
     //console.log('checking bullets');
     bulletArray.forEach((bullet, index) => {
         //move bullet
@@ -83,7 +84,7 @@ setInterval(() => {
     });
 
     hit = false;
-}, 20);
+}
 
 setInterval(() => {
     // make a blank array
@@ -199,6 +200,9 @@ const lowestSprites = () => {
     );
 };
 
-let enemyShootInterval = setInterval(() => {
-    lowestSprites();
-}, 500);
+let enemyShootInterval = () => {
+    if (shootCounter % 30 === 0){ //shoot every 20 frames
+        lowestSprites();
+    }
+    shootCounter ++ 
+}
