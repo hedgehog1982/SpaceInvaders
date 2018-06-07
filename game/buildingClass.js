@@ -100,6 +100,7 @@ const heartBuilder = (startX, startY, height, width) => {
         '../images/Heart.png',
         'myCanvas'
     ))
+      
 
         };
 
@@ -108,3 +109,5 @@ const heartBuilder = (startX, startY, height, width) => {
   heartBuilder(400, 0,80 ,80);
   heartBuilder(500, 0,80 ,80);
   heartBuilder(600, 0,80 ,80);
+
+  
