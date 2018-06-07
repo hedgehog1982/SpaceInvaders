@@ -1,6 +1,7 @@
 let bulletSpeed = 4;
 let shootCounter = 0;
-let shootSpeed = 5
+let shootSpeed = 20
+let enemyBulletSpeed = 2;
 
 const dealWithBullets = () => {
     //console.log('checking bullets');
@@ -87,12 +88,12 @@ const dealWithBullets = () => {
     hit = false;
 }
 
-setInterval(() => {
+const dealWithEnemyBullets = () => {
 
     enemyBullets.forEach((bullet, index) => {
         //move bullet
         // console.log(bullet)
-        bullet.moveSprite(bullet.x, bullet.y + bulletSpeed);
+        bullet.moveSprite(bullet.x, bullet.y + enemyBulletSpeed);
 
         // is it hitting a building
         buildingArray.forEach((building, buildingIndex) => {
@@ -188,7 +189,7 @@ setInterval(() => {
     });
 
     spaceShipHit = false;
-}, 30);
+}
 
 const lowestSprites = () => {
     let uniqueX = [];

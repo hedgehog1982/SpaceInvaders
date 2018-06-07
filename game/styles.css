@@ -24,3 +24,8 @@ button{
     width: 50px;
     height : 50px;
 }
+
+img{
+    width : 90vw;
+    height : 85vh;
+}

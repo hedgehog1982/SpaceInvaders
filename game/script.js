@@ -20,7 +20,7 @@ let mainTimer
 
 const startGame = () => {
   //move tied to one event?
-  let elem = document.getElementById('start');
+  let elem = document.getElementById('play');
   elem.parentNode.removeChild(elem);
 
          mainTimer = setInterval(() => {
@@ -28,6 +28,7 @@ const startGame = () => {
             enemyMovement();
             enemyShootInterval()
             dealWithBullets()
+            dealWithEnemyBullets()
 
         }, 20); 
 
