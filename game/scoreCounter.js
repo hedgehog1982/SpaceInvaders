@@ -43,7 +43,7 @@ const removeHearts = () =>{
                 64,
                 64,
                 '../images/Explo.png',
-                'explosionCanvas',
+                'myCanvas',
                 50,
                 explosionMap
             );

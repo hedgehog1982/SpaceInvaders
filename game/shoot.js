@@ -146,6 +146,19 @@ setInterval(() => {
             ) {
                 console.log('spaceship hit');
                 var audio = new Audio('../sounds/explosion1.mp3');
+
+                let shield = new animatedSprite(
+                    spaceShip.x - 57,
+                    spaceShip.y - 40,
+                    180,
+                    180,
+                    192,
+                    192,
+                    '../images/shield.png',
+                    'explosionCanvas',
+                    20,
+                    shieldMap
+                );
                 audio.play();
                 bullet.removeSprite();
                 enemyBullets[index] = '';

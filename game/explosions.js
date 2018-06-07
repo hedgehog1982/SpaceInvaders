@@ -2,7 +2,14 @@ let explosionMap = [0, 0 , 64 , 0, 128 , 0, 192 ,0,
                     0, 64 , 64 , 64, 128 , 64, 192 ,64,
                     0, 128 , 64 , 128, 128 , 128, 192 ,128,
                     0, 192 , 64 , 192, 128 , 192, 192 ,192,      
-                ];
+                ]
+
+let shieldMap = [766, 574, 574, 574, 384, 574, 192 , 574 , 0, 574,
+    766, 384, 574, 384, 384, 384, 192 , 382 , 0, 384,
+    766, 192, 574, 192, 384, 192, 192 , 192 , 0, 192,
+    766, 0, 574, 0, 384, 0, 192 , 0 , 0, 0
+
+]
 
 class animatedSprite {
     constructor(
@@ -83,15 +90,15 @@ class animatedSprite {
     }
 }
 //(x, y, width, height, imageMap, targetCanvas, refreshRate, animationArray )
-/*let test = new animatedSprite(
+/*let shield = new animatedSprite(
     40,
     40,
-    40,
-    40,
-    64,
-    64,
-    '../images/Explo.png',
+    192,
+    192,
+    192,
+    192,
+    '../images/shield.png',
     'explosionCanvas',
-    50,
-    explosionMap
+    20,
+    shieldMap
 );*/
